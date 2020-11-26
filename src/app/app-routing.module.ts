@@ -2,8 +2,12 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Importamos las rutas:
-import { BuscaTuMascotaComponent } from './components/busca-tu-mascota/busca-tu-mascota.component';
 import { HomeComponent } from './components/home/home.component';
+import { BuscaTuMascotaComponent } from './components/busca-tu-mascota/busca-tu-mascota.component';
+import { ReportaUnaMascotaComponent } from './components/reporta-una-mascota/reporta-una-mascota.component';
+import { CasosFelicesComponent } from './components/casos-felices/casos-felices.component';
+import { IngresaComponent } from './components/ingresa/ingresa.component';
+import { RegistrateComponent } from './components/registrate/registrate.component';
 
 
 const routes: Routes = [
@@ -15,6 +19,26 @@ const routes: Routes = [
   {
     path: 'home',  // http://localhost:4200/home
     component: HomeComponent
+  },
+    {
+    path: 'buscaTuMascota',  // http://localhost:4200/buscaTuMasreportaUnaMascota
+    component: BuscaTuMascotaComponent
+  },
+    {
+    path: 'reportaUnaMascota',  // http://localhost:4200/reportaUnaMascota
+    component: ReportaUnaMascotaComponent
+  },
+    {
+    path: 'casosFelices',  // http://localhost:4200/casosFelices
+    component: CasosFelicesComponent
+  },
+    {
+    path: 'ingresa',  // http://localhost:4200/ingresa
+    component: IngresaComponent
+  },
+    {
+    path: 'registrate',  // http://localhost:4200/registrate
+    component: RegistrateComponent
   }
 ];
 
