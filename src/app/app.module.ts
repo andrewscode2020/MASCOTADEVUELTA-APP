@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import fontawesome from '@fortawesome/fontawesome';
 
-// import { AppRoutingModule } from './app-routing.module';
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +13,7 @@ import { ReportaUnaMascotaComponent } from './components/reporta-una-mascota/rep
 import { CasosFelicesComponent } from './components/casos-felices/casos-felices.component';
 import { IngresaComponent } from './components/ingresa/ingresa.component';
 import { RegistrateComponent } from './components/registrate/registrate.component';
+import { DetalleMascotaComponent } from './components/detalle-mascota/detalle-mascota.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { RegistrateComponent } from './components/registrate/registrate.componen
     ReportaUnaMascotaComponent,
     CasosFelicesComponent,
     IngresaComponent,
-    RegistrateComponent
+    RegistrateComponent,
+    DetalleMascotaComponent
   ],
   imports: [
     BrowserModule,

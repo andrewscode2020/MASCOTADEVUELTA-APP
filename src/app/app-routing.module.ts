@@ -8,6 +8,7 @@ import { ReportaUnaMascotaComponent } from './components/reporta-una-mascota/rep
 import { CasosFelicesComponent } from './components/casos-felices/casos-felices.component';
 import { IngresaComponent } from './components/ingresa/ingresa.component';
 import { RegistrateComponent } from './components/registrate/registrate.component';
+import { DetalleMascotaComponent } from './components/detalle-mascota/detalle-mascota.component';
 
 
 const routes: Routes = [
@@ -20,23 +21,27 @@ const routes: Routes = [
     path: 'home',  // http://localhost:4200/home
     component: HomeComponent
   },
-    {
+  {
     path: 'buscaTuMascota',  // http://localhost:4200/buscaTuMasreportaUnaMascota
     component: BuscaTuMascotaComponent
   },
-    {
+  {
     path: 'reportaUnaMascota',  // http://localhost:4200/reportaUnaMascota
     component: ReportaUnaMascotaComponent
   },
-    {
+  {
     path: 'casosFelices',  // http://localhost:4200/casosFelices
     component: CasosFelicesComponent
   },
-    {
+  {
+    path: 'detalleMascota',  // http://localhost:4200/casosFelices
+    component: DetalleMascotaComponent
+  },
+  {
     path: 'ingresa',  // http://localhost:4200/ingresa
     component: IngresaComponent
   },
-    {
+  {
     path: 'registrate',  // http://localhost:4200/registrate
     component: RegistrateComponent
   }
