@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+$theme-colors: (
+  "mdv1": #162161,
+  "mdv2": #f2e205,
+  "mdv3": #f2b705,
+  "mdv4": #f29f05,
+  "mdv5": #f25c05,
+);
+
+@import "bootstrap";

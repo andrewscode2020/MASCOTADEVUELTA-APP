@@ -1,1 +1,184 @@
-<p>busca-tu-mascota works!</p>
+<div
+  class="row busquedaAvanzada d-flex Justify-content-center align-items-center"
+>
+  <span class="col-2">Busqueda avanzada</span>
+  <div class="dropdown col-2">
+    <button
+      class="btn dropdown-toggle ddb"
+      type="button"
+      id="ddBusqueda"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      ¿Qué deseas buscar?
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Mascota perdida</a>
+      <a class="dropdown-item" href="#">Mascota encontrada</a>
+    </div>
+  </div>
+  <div class="dropdown col-2">
+    <button
+      class="btn dropdown-toggle ddb"
+      type="button"
+      id="ddMascota"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Mascota
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Gato</a>
+      <a class="dropdown-item" href="#">Perro</a>
+    </div>
+  </div>
+  <div class="dropdown col-2">
+    <button
+      class="btn dropdown-toggle ddb"
+      type="button"
+      id="ddCiudad"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Ciudad
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Bogotá</a>
+      <a class="dropdown-item" href="#">Medellin</a>
+      <a class="dropdown-item" href="#">Cartagena</a>
+    </div>
+  </div>
+  <div class="dropdown col-2">
+    <button
+      class="btn dropdown-toggle ddb"
+      type="button"
+      id="ddRaza"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Raza
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Siberiano</a>
+      <a class="dropdown-item" href="#">Labrador</a>
+      <a class="dropdown-item" href="#">Pitbull</a>
+    </div>
+  </div>
+  <div class="dropdown col-2">
+    <button
+      class="btn dropdown-toggle ddb"
+      type="button"
+      id="ddSexo"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Sexo
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Femenino</a>
+      <a class="dropdown-item" href="#">Masculino</a>
+    </div>
+  </div>
+</div>
+<div class="row contenedor">
+  <!-- Total resultados -->
+  <div
+    class="col-md-2 col-sm-10 d-flex flex-column align-items-left justify-content-center p-5"
+  >
+    <span>Total de resultados</span>
+    <span>Mascotas por ciudad:</span>
+    <span>Bogotá: 2</span>
+    <span>Tipos de mascota:</span>
+    <span>Perro: 4</span>
+    <span>Tipos de busqueda:</span>
+    <span>Perdidos: 6</span>
+  </div>
+  <!-- Cards imagenes-->
+  <div class="col-md-10 col-sm-12 p-5">
+    <div class="card mb-3 border-0">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 d-flex align-items-center">
+          <img
+            src="../imagenes/2dog.jpg"
+            class="card-img imagenesPerritos"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-6 col-sm-10 d-flex align-items-center mx-5">
+          <div class="card-body blueCard">
+            <div class="row d-flex containerBlueCard align-items-center">
+              <div class="col-md-6 col-sm-4 d-flex flex-column">
+                <div class="d-flex justify-content-center m-3">
+                  <span class="material-icons spanAmarillo"> loyalty </span>
+                  <span>Hembra</span>
+                </div>
+                <div class="d-flex justify-content-center m-3">
+                  <span class="material-icons spanAmarillo"> pets </span>
+                  <span>2 años</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-4 d-flex flex-column">
+                <div class="d-flex justify-content-center m-3">
+                  <span class="material-icons spanAmarillo"> favorite </span>
+                  <span>1 de Otubre</span>
+                </div>
+                <div class="d-flex justify-content-center m-3">
+                  <span class="material-icons spanAmarillo"> place </span>
+                  <span>Bogotá, Suba</span>
+                </div>
+              </div>
+            </div>
+            <div class="row w-100 d-flex justify-content-end">
+              <button id="verMas1" class="botonDetalles">Ver más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-3 border-0">
+      <div class="row">
+        <div class="col-md-4 d-flex align-items-center">
+          <img
+            src="../imagenes/2.jpg"
+            class="card-img imagenesPerritos"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-6 col-sm-10 d-flex align-items-center mx-5">
+          <div class="card-body blueCard">
+            <div class="row d-flex containerBlueCard align-items-center">
+              <div class="col-md-6 col-sm-4 d-flex flex-column">
+                <div class="d-flex justify-content-center m-3">
+                  <span class="material-icons spanAmarillo"> loyalty </span>
+                  <span>Macho</span>
+                </div>
+                <div class="d-flex justify-content-center m-3">
+                  <span class="material-icons spanAmarillo"> pets </span>
+                  <span> 4 años</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-4 d-flex flex-column">
+                <div class="d-flex justify-content-center m-3">
+                  <span class="material-icons spanAmarillo"> favorite </span>
+                  <span>2 de febrero</span>
+                </div>
+                <div class="d-flex justify-content-center m-3">
+                  <span class="material-icons spanAmarillo"> place </span>
+                  <span>Bogotá, Salitre</span>
+                </div>
+              </div>
+            </div>
+            <div class="row w-100 d-flex justify-content-end">
+              <button id="verMas2" class="botonDetalles">Ver más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

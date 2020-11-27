@@ -1,1 +1,302 @@
-<p>reporta-una-mascota works!</p>
+<main class="p-2">
+  <form>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="mascotaPerdida"
+            value="option1"
+            checked
+          />
+          <label class="form-check-label" for="mascotaPerdida">
+            Perdi mi mascota
+          </label>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="exampleRadios"
+            id="mascotaEncontrada"
+            value="option2"
+            checked
+          />
+          <label class="form-check-label" for="mascotaEncontrada">
+            Encontre una mascota
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile" />
+          <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <input type="text" class="form-control" placeholder="Nombre" />
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <select class="custom-select mr-sm-2" id="tipoMascota">
+          <option selected>Tipo mascota</option>
+          <option value="1">Perro</option>
+          <option value="2">Gato</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <select class="custom-select mr-sm-2" id="sexo">
+          <option selected>Sexo</option>
+          <option value="1">Hembra</option>
+          <option value="2">Macho</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <select class="custom-select mr-sm-2" id="raza">
+          <option selected>Raza</option>
+          <option value="1">Golden Retriver</option>
+          <option value="2">Pitbull</option>
+          <option value="3">Labrador</option>
+          <option value="4">Criollo</option>
+          <option value="5">Sin identificar</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <input type="text" class="form-control" placeholder="Edad" />
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <select class="custom-select mr-sm-2" id="tamaño">
+          <option selected>Tamaño</option>
+          <option value="1">Miniatura</option>
+          <option value="2">Pequeño</option>
+          <option value="3">Mediano</option>
+          <option value="4">Grande</option>
+          <option value="5">Gigante</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <select class="custom-select mr-sm-2" id="tipoPelo">
+          <option selected>Tipo de pelo</option>
+          <option value="1">Corto</option>
+          <option value="2">Largo y sedoso</option>
+          <option value="3">Pelo rizado</option>
+          <option value="4">Pelo doble, medio y liso</option>
+          <option value="5">Pelo grueso</option>
+          <option value="6">Pelo duro</option>
+          <option value="7">Pelo perenne</option>
+          <option value="8">Sin pelo</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <input type="text" class="form-control" placeholder="Color" />
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <div><span>¿Castrado?</span></div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="esterilizado"
+            id="sinCastrar"
+            value="si"
+            checked
+          />
+          <label class="form-check-label" for="sinCastrar"> Si </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="esterilizado"
+            id="castrado"
+            value="no"
+          />
+          <label class="form-check-label" for="castrado"> No </label>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div><span>¿Tiene Chip?</span></div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="chip"
+            id="conChip"
+            value="si"
+            checked
+          />
+          <label class="form-check-label" for="conChip"> Si </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="chip"
+            id="sinChip"
+            value="no"
+          />
+          <label class="form-check-label" for="sinChip"> No </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-12">
+        <span>Carácteristicas adicionales</span>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-12">
+        <div class="container-fluid p-2">
+          <div class="container-fluid mt-2 mb-2">
+            <input type="text" class="form-control" placeholder="" />
+          </div>
+          <div class="container-fluid mt-2 mb-2">
+            <input type="text" class="form-control" placeholder="" />
+          </div>
+          <div class="container-fluid mt-2 mb-2">
+            <input type="text" class="form-control" placeholder="" />
+          </div>
+          <div class="container-fluid mt-2 mb-2">
+            <input type="text" class="form-control" placeholder="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-12">
+        <span>Visto por última vez / Encontrado en</span>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <select class="custom-select mr-sm-2" id="pais">
+          <option selected>País</option>
+          <option value="1">Colombia</option>
+          <option value="2">Ecuador</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <select class="custom-select mr-sm-2" id="departamento">
+          <option selected>Departamento</option>
+          <option value="1">Cundinamarca</option>
+          <option value="2">Boyacá</option>
+          <option value="3">Antioquia</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <select class="custom-select mr-sm-2" id="ciudad">
+          <option selected>Ciudad</option>
+          <option value="1">Bogotá</option>
+          <option value="2">Chia</option>
+          <option value="3">La calera</option>
+          <option value="4">Cota</option>
+          <option value="5">Tenjo</option>
+          <option value="6">Funza</option>
+          <option value="7">Mosquera</option>
+          <option value="8">Úbate</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <input type="text" class="form-control" placeholder="Barrio" />
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-6">
+        <input type="date" class="form-control" placeholder="fecha" />
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <input type="time" class="form-control" placeholder="hora" />
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12">
+        <textarea
+          name="datosPerdida"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Información adicional sobre la perdida/encuentro"
+          class="form-control"
+        ></textarea>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 md-6">
+        <div><span>¿Deseas dar un recompensa?</span></div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="recompensa"
+            id="conRecompensa"
+            value="si"
+            checked
+          />
+          <label class="form-check-label" for="conRecompensa"> Si </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="recompensa"
+            id="sinRecompensa"
+            value="no"
+          />
+          <label class="form-check-label" for="sinRecompensa"> No </label>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <input type="number" class="form-control" placeholder="valor" />
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 md-6">
+        <div><span>¿Deseas que tu telefono sea público?</span></div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="telPublico"
+            id="conTelPublico"
+            value="si"
+            checked
+          />
+          <label class="form-check-label" for="conTelPublico"> Si </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="telPublico"
+            id="sinTelPublico"
+            value="no"
+          />
+          <label class="form-check-label" for="sinTelPublico"> No </label>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-6"></div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12">
+        <button type="submit" class="btn btn-primary mb-2">Guardar</button>
+      </div>
+    </div>
+  </form>
+</main>

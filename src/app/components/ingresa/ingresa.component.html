@@ -1,1 +1,42 @@
-<p>ingresa works!</p>
+<h1 class="titulo text-color-3 text-center bg-color-5 py-3">
+  Usuario Registrado
+</h1>
+
+<div class="container rounded-lg bg-color-3 d-flex justify-content-center px-0">
+  <form class="form-group text-center w-75 px-4 my-0">
+    <img
+      class="imagenIngreso rounded-circle my-3"
+      src="../imagenes/imagenIngreso.jpg"
+      alt=""
+      height="200"
+    />
+
+    <input
+      type="email"
+      id="ingreseCorreo"
+      class="form-control my-2"
+      placeholder="Correo electrónico"
+      required
+      autofocus
+    />
+
+    <input
+      type="password"
+      id="ingreseContraseña"
+      class="form-control my-2"
+      placeholder="Contraseña"
+      required
+    />
+
+    <!-- Checkbox Recordarme -->
+    <div class="checkbox mb-3">
+      <label> <input type="checkbox" value="recordarme" /> Recordarme </label>
+    </div>
+
+    <!-- Botón Ingresar -->
+    <button class="btn btn-lg btn-block bg-color-5 text-light" type="submit">
+      Ingresar
+    </button>
+    <p class="mt-5 mb-3 text-center text-muted">&copy;2020</p>
+  </form>
+</div>
