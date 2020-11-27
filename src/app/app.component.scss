@@ -9,3 +9,35 @@ a.text-mdv3:focus {
 .navbar-dark .navbar-nav .nav-link.active {
   color: #f25c05 !important;
 }
+
+// Estilos del index del proyecto original:
+
+.logo {
+  height: 90px;
+}
+
+.icono-usuario {
+  font-size: 30px;
+}
+
+.menuNavegacion:hover,
+.icono-usuario:hover,
+.texto-usuario:hover,
+.icono-social:hover {
+  color: #f25c05 !important;
+}
+
+.contenidoIframeClass {
+  /* height: calc(100vh - 113px); */
+  width: 100%;
+}
+
+.footer {
+  width: 100%;
+  // position: absolute;
+  // bottom: 0;
+}
+
+.redes-sociales {
+  font-size: 20px;
+}

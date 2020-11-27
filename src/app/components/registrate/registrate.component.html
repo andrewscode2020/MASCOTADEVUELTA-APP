@@ -1,1 +1,82 @@
-<p>registrate works!</p>
+<div class="container rounded-lg bg-mdv3 d-flex justify-content-center px-0">
+  <!-- Formulario -->
+  <form class="form-group text-center formularioRegistroUsuario mx-5 w-100">
+    <img
+      class="imagenIngreso rounded-circle my-3"
+      src="../../../assets/images/imagenRegistro.jpg"
+      alt=""
+      height="200"
+    />
+
+    <div class="form-row">
+      <div class="col">
+        <input
+          type="email"
+          id="ingreseCorreo"
+          class="form-control my-2"
+          placeholder="Correo electrónico"
+          required
+          autofocus
+        />
+      </div>
+      <div class="col">
+        <input
+          type="email"
+          id="confirmeCorreo"
+          class="form-control my-2"
+          placeholder="Confirmar correo electrónico"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <input
+          type="password"
+          id="ingreseContraseña"
+          class="form-control my-2"
+          placeholder="Contraseña"
+          required
+        />
+      </div>
+      <div class="col">
+        <input
+          type="password"
+          id="confirmeContraseña"
+          class="form-control my-2"
+          placeholder="Confirmar contraseña"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col">
+        <input
+          type="text"
+          id="ingreseNombre"
+          class="form-control my-2"
+          placeholder="Nombre completo"
+          required
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          id="ingreseTeléfono"
+          class="form-control my-2"
+          placeholder="Teléfono"
+          required
+        />
+      </div>
+    </div>
+
+    <!-- Botón Registrarme  -->
+    <button
+      class="btn btn-lg btn-block bg-mdv1 text-light mt-4"
+      type="submit"
+    >
+      Registrarme
+    </button>
+    <p class="mt-5 mb-3 text-center text-muted">&copy;2020</p>
+  </form>
+</div>

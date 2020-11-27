@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import fontawesome from '@fortawesome/fontawesome';
 
 // import { AppRoutingModule } from './app-routing.module';
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -25,7 +27,8 @@ import { RegistrateComponent } from './components/registrate/registrate.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
