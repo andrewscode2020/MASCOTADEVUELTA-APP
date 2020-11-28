@@ -1,88 +1,51 @@
-<div
-  class="row busquedaAvanzada d-flex Justify-content-center align-items-center bg-mdv3"
->
-  <span class="col-2">Busqueda avanzada</span>
-  <div class="dropdown col-2">
-    <button
-      class="btn dropdown-toggle ddb"
-      type="button"
-      id="ddBusqueda"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      ¿Qué deseas buscar?
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Mascota perdida</a>
-      <a class="dropdown-item" href="#">Mascota encontrada</a>
-    </div>
+<div class="row d-flex align-self-center justify-content-center bg-mdv3 p-2">
+  <div class="col cols-sm-12 cols-md-2 d-flex align-self-center">
+    <span>Busqueda avanzada</span>
   </div>
-  <div class="dropdown col-2">
-    <button
-      class="btn dropdown-toggle ddb"
-      type="button"
-      id="ddMascota"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Mascota
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Gato</a>
-      <a class="dropdown-item" href="#">Perro</a>
-    </div>
+  <div class="col cols-sm-12 cols-md-2">
+    <select class="custom-select mr-sm-2" id="tipoReporte">
+      <option selected>¿Que desea buscar?</option>
+      <option value="1">Mascota perdida</option>
+      <option value="2">Mascota encontrada</option>
+      <option value="2">Todos</option>
+    </select>
   </div>
-  <div class="dropdown col-2">
-    <button
-      class="btn dropdown-toggle ddb"
-      type="button"
-      id="ddCiudad"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Ciudad
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Bogotá</a>
-      <a class="dropdown-item" href="#">Medellin</a>
-      <a class="dropdown-item" href="#">Cartagena</a>
-    </div>
+  <div class="col cols-sm-12 cols-md-2">
+    <select class="custom-select mr-sm-2" id="tipoMascota">
+      <option selected>Tipo mascota</option>
+      <option value="1">Perro</option>
+      <option value="2">Gato</option>
+    </select>
   </div>
-  <div class="dropdown col-2">
-    <button
-      class="btn dropdown-toggle ddb"
-      type="button"
-      id="ddRaza"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Raza
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Siberiano</a>
-      <a class="dropdown-item" href="#">Labrador</a>
-      <a class="dropdown-item" href="#">Pitbull</a>
-    </div>
+  <div class="col cols-sm-12 cols-md-2">
+    <select class="custom-select mr-sm-2" id="raza">
+      <option selected>Raza</option>
+      <option value="1">Golden Retriver</option>
+      <option value="2">Pitbull</option>
+      <option value="3">Labrador</option>
+      <option value="4">Criollo</option>
+      <option value="5">Sin identificar</option>
+    </select>
   </div>
-  <div class="dropdown col-2">
-    <button
-      class="btn dropdown-toggle ddb"
-      type="button"
-      id="ddSexo"
-      data-toggle="dropdown"
-      aria-haspopup="true"
-      aria-expanded="false"
-    >
-      Sexo
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Femenino</a>
-      <a class="dropdown-item" href="#">Masculino</a>
-    </div>
+  <div class="col cols-sm-12 cols-md-2">
+    <select class="custom-select mr-sm-2" id="sexo">
+      <option selected>Sexo</option>
+      <option value="1">Hemdra</option>
+      <option value="2">Macho</option>
+    </select>
+  </div>
+  <div class="col cols-sm-12 cols-md-2">
+    <select class="custom-select mr-sm-2" id="ciudad">
+      <option selected>Ciudad</option>
+      <option value="1">Bogotá</option>
+      <option value="2">Chia</option>
+      <option value="3">La calera</option>
+      <option value="4">Cota</option>
+      <option value="5">Tenjo</option>
+      <option value="6">Funza</option>
+      <option value="7">Mosquera</option>
+      <option value="8">Úbate</option>
+    </select>
   </div>
 </div>
 <div class="row contenedor">
@@ -100,8 +63,8 @@
   </div>
   <!-- Cards imagenes-->
   <div class="col-md-10 col-sm-12 p-5">
-    <div class="card mb-3 border-0">
-      <div class="row">
+    <div class="card md-3 border-0">
+      <div class="row mb-2">
         <div class="col-md-4 col-sm-12 d-flex align-items-center">
           <img
             src="../../../assets/images/2dog.jpg"
@@ -110,27 +73,27 @@
           />
         </div>
         <div class="col-md-6 col-sm-10 d-flex align-items-center mx-5">
-          <div class="card-body bg-mdv1">
+          <div class="card-body bg-mdv1 blueCard">
             <!-- blueCard -->
             <div class="row d-flex containerBlueCard align-items-center">
               <div class="col-md-6 col-sm-4 d-flex flex-column">
                 <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2"> loyalty </span>
-                  <span class="text-light">Hembra</span>
+                  <span class="material-icons text-mdv2 mr-2"> loyalty </span>
+                  <span class="text-light h6">Hembra</span>
                 </div>
                 <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2"> pets </span>
-                  <span class="text-light">2 años</span>
+                  <span class="material-icons text-mdv2 mr-2"> pets </span>
+                  <span class="text-light h6">2 años</span>
                 </div>
               </div>
               <div class="col-md-6 col-sm-4 d-flex flex-column">
                 <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2"> favorite </span>
-                  <span class="text-light">1 de Otubre</span>
+                  <span class="material-icons text-mdv2 mr-2"> favorite </span>
+                  <span class="text-light h6">1 de Otubre</span>
                 </div>
                 <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2"> place </span>
-                  <span class="text-light">Bogotá, Suba</span>
+                  <span class="material-icons text-mdv2 mr-2"> place </span>
+                  <span class="text-light h6">Bogotá, Suba</span>
                 </div>
               </div>
             </div>
@@ -147,8 +110,8 @@
         </div>
       </div>
     </div>
-    <div class="card mb-3 border-0">
-      <div class="row">
+    <div class="card md-3 border-0">
+      <div class="row mt-2">
         <div class="col-md-4 d-flex align-items-center">
           <img
             src="../../../assets/images/2.jpg"
@@ -157,26 +120,27 @@
           />
         </div>
         <div class="col-md-6 col-sm-10 d-flex align-items-center mx-5">
-          <div class="card-body bg-mdv1">
+          <div class="card-body bg-mdv1 blueCard">
+            <!-- blueCard -->
             <div class="row d-flex containerBlueCard align-items-center">
               <div class="col-md-6 col-sm-4 d-flex flex-column">
                 <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2"> loyalty </span>
-                  <span class="text-light">Macho</span>
+                  <span class="material-icons text-mdv2 mr-2"> loyalty </span>
+                  <span class="text-light h6">Macho</span>
                 </div>
                 <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2"> pets </span>
-                  <span class="text-light"> 4 años</span>
+                  <span class="material-icons text-mdv2 mr-2"> pets </span>
+                  <span class="text-light h6"> 4 años</span>
                 </div>
               </div>
               <div class="col-md-6 col-sm-4 d-flex flex-column">
                 <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2"> favorite </span>
-                  <span class="text-light">2 de febrero</span>
+                  <span class="material-icons text-mdv2 mr-2"> favorite </span>
+                  <span class="text-light h6">2 de febrero</span>
                 </div>
                 <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2"> place </span>
-                  <span class="text-light">Bogotá, Salitre</span>
+                  <span class="material-icons text-mdv2 mr-2"> place </span>
+                  <span class="text-light h6">Bogotá, Salitre</span>
                 </div>
               </div>
             </div>
