@@ -1,58 +1,108 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-mdv1">
   <a class="navbar-brand text-mdv3" routerLink="/home">mascotadevuelta.com</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link font-weight-bold text-mdv3" routerLink="/home"
-          >Home</a
-        >
+        <a class="nav-link font-weight-bold text-mdv3" routerLink="/home">Home</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a
-          class="nav-link font-weight-bold text-mdv3"
-          routerLink="/buscaTuMascota"
-          >Busca Tu Mascota</a
-        >
+        <a class="nav-link font-weight-bold text-mdv3" routerLink="/buscaTuMascota">Busca Tu Mascota</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a
-          class="nav-link font-weight-bold text-mdv3"
-          routerLink="/reportaUnaMascota"
-          >Reporta Una Mascota</a
-        >
+        <a class="nav-link font-weight-bold text-mdv3" routerLink="/reportaUnaMascota">Reporta Una Mascota</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a
-          class="nav-link font-weight-bold text-mdv3"
-          routerLink="/casosFelices"
-          >Casos Felices</a
-        >
+        <a class="nav-link font-weight-bold text-mdv3" routerLink="/casosFelices">Casos Felices</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link font-weight-bold text-mdv3" routerLink="/ingresa"
-          >Ingresa</a
-        >
+        <a class="nav-link font-weight-bold text-mdv3" routerLink="/ingresa">Ingresa</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link font-weight-bold text-mdv3" routerLink="/registrate"
-          >Regístrate</a
-        >
+        <a class="nav-link font-weight-bold text-mdv3" routerLink="/registrate">Regístrate</a>
       </li>
     </ul>
+    <div class="row">
+      <div class="col text-center">
+        <div *ngIf="!login; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+          <div id="divLogin" class="d-flex flex-column divIconosSup" data-toggle="modal" data-target="#modalLogin"
+            (click)="login = !login">
+            <fa-icon [icon]="faSignInAlt" class="px-3 text-mdv3 icono-social"></fa-icon>
+            <a id="txtlogin" class="texto-usuario text-decoration-none text-color-3" href="#">Ingresa</a>
+          </div>
+        </ng-template>
+        <ng-template #elseBlock>
+          <div id="divLogout" class="d-flex flex-column divIconosSup oculto" (click)="login = !login">
+            <fa-icon [icon]="faSignOutAlt" class="px-3 text-mdv3 icono-social"></fa-icon>
+            <a id="txtlogin" class="texto-usuario text-decoration-none text-color-3" href="#">Salir</a>
+          </div>
+        </ng-template>
+      </div>
+      <div class="col text-center">
+        <div *ngIf="newUser; then nuevoUsuario else usuario"></div>
+        <ng-template #nuevoUsuario>
+          <div id="divRegistrate" class="d-flex flex-column divIconosSup" data-toggle="modal"
+            data-target="#modalRegistry">
+            <fa-icon [icon]="faUserPlus" class="px-3 text-mdv3 icono-social" (click)="newUser = !newUser"></fa-icon>
+            <a id="txtRegistrate" class="texto-usuario text-decoration-none text-color-3" href="#">Registrate</a>
+          </div>
+        </ng-template>
+        <ng-template #usuario>
+          <div id="divUsuario" class="d-flex flex-column divIconosSup oculto">
+            <fa-icon [icon]="faUser" class="px-3 text-mdv3 icono-social" (click)="newUser = !newUser"></fa-icon>
+            <a id="txtUsuario" class="texto-usuario text-decoration-none text-color-3" href="#">Usuario</a>
+          </div>
+        </ng-template>
+      </div>
+    </div>
   </div>
 </nav>
+
+<!--Modal-->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Usuario Registrado
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body bg-mdv3">
+        <app-ingresa></app-ingresa>
+      </div>
+    </div>
+  </div>
+</div>
+<!--fin modal login-->
+<!--Modal registro-->
+<div class="modal fade" id="modalRegistry" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Registrate
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body bg-mdv3">
+        <app-registrate></app-registrate>
+      </div>
+    </div>
+  </div>
+</div>
+<!--fin modal registro-->
 
 <router-outlet></router-outlet>
 

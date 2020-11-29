@@ -151,5 +151,8 @@
       }
     }
   },
-  "defaultProject": "MASCOTADEVUELTA-APP"
+  "defaultProject": "MASCOTADEVUELTA-APP",
+  "cli": {
+    "analytics": false
+  }
 }
