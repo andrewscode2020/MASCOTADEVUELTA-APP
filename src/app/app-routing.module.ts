@@ -9,7 +9,7 @@ import { CasosFelicesComponent } from './components/casos-felices/casos-felices.
 import { IngresaComponent } from './components/ingresa/ingresa.component';
 import { RegistrateComponent } from './components/registrate/registrate.component';
 import { DetalleMascotaComponent } from './components/detalle-mascota/detalle-mascota.component';
-
+import { BreedComponent } from './components/breed/breed.component';
 
 const routes: Routes = [
   {
@@ -44,6 +44,10 @@ const routes: Routes = [
   {
     path: 'registrate',  // http://localhost:4200/registrate
     component: RegistrateComponent
+  },
+  {
+    path: 'breeds', // http://localhost:4200/breeds
+    component: BreedComponent
   }
 ];
 

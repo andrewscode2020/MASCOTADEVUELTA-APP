@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 // import fontawesome from '@fortawesome/fontawesome';
 
 // import { ReactiveFormsModule, FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { CasosFelicesComponent } from './components/casos-felices/casos-felices.
 import { IngresaComponent } from './components/ingresa/ingresa.component';
 import { RegistrateComponent } from './components/registrate/registrate.component';
 import { DetalleMascotaComponent } from './components/detalle-mascota/detalle-mascota.component';
+import { BreedComponent } from './components/breed/breed.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +26,14 @@ import { DetalleMascotaComponent } from './components/detalle-mascota/detalle-ma
     CasosFelicesComponent,
     IngresaComponent,
     RegistrateComponent,
-    DetalleMascotaComponent
+    DetalleMascotaComponent,
+    BreedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
