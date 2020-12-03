@@ -12,8 +12,9 @@ export class BreedService {
 
   constructor(private http: HttpClient) { }
 
-  getBreedById(petType: String) {
-    console.log(petType)
-    return this.http.get<Breed>(`${this.BASE_URL}/${petType}`)
+  getBreedByPetType(petType: String) {
+    // console.log("petType",petType)
+    // console.log("BASE_URL",`${this.BASE_URL}/${petType}`)
+    return this.http.get<Array<Breed>>(`${this.BASE_URL}/${petType}`)
   }
 }

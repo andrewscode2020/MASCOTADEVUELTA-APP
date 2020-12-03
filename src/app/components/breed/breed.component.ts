@@ -9,26 +9,23 @@ import { BreedService } from '../../services/breed.service';
   styleUrls: ['./breed.component.scss']
 })
 export class BreedComponent implements OnInit {
-    breed: Breed = {
-    name: '',
-    petType: ''
-  };
+  breeds: Array<Breed> = [];
 
   constructor(private breedService: BreedService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-      this.activatedRoute.params
+    this.activatedRoute.params
       .subscribe((params) => {
-      this.getBreeds(params.id)
+        this.getBreeds(params.petType)
       })
   }
 
-  
+
   getBreeds(petType: String) {
-    this.breedService.getBreedById(petType)
+    this.breedService.getBreedByPetType(petType)
       .subscribe(
-        (breedList) => {
-          this.breed = breedList
+        (breedsList) => {
+          this.breeds = breedsList
         },
         (error) => {
           console.error('Error accediendo a la lista de razas ', error)

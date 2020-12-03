@@ -48,6 +48,10 @@ const routes: Routes = [
   {
     path: 'breeds', // http://localhost:4200/breeds
     component: BreedComponent
+  },
+  {
+    path: 'breeds/:petType', // http://localhost:4200/breeds
+    component: BreedComponent
   }
 ];
 
