@@ -16,6 +16,8 @@ import { IngresaComponent } from './components/ingresa/ingresa.component';
 import { RegistrateComponent } from './components/registrate/registrate.component';
 import { DetalleMascotaComponent } from './components/detalle-mascota/detalle-mascota.component';
 import { BreedComponent } from './components/breed/breed.component';
+import { StateComponent } from './components/state/state.component';
+import { CityComponent } from './components/city/city.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { BreedComponent } from './components/breed/breed.component';
     IngresaComponent,
     RegistrateComponent,
     DetalleMascotaComponent,
-    BreedComponent
+    BreedComponent,
+    StateComponent,
+    CityComponent
   ],
   imports: [
     BrowserModule,

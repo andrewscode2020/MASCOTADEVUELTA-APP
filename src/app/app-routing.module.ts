@@ -10,6 +10,8 @@ import { IngresaComponent } from './components/ingresa/ingresa.component';
 import { RegistrateComponent } from './components/registrate/registrate.component';
 import { DetalleMascotaComponent } from './components/detalle-mascota/detalle-mascota.component';
 import { BreedComponent } from './components/breed/breed.component';
+import { StateComponent } from './components/state/state.component';
+import { CityComponent } from './components/city/city.component';
 
 const routes: Routes = [
   {
@@ -52,6 +54,14 @@ const routes: Routes = [
   {
     path: 'breeds/:petType', // http://localhost:4200/breeds
     component: BreedComponent
+  },
+  {
+    path: 'states/:country', // http://localhost:4200/breeds
+    component: StateComponent
+  },
+  {
+    path: 'cities/:state', // http://localhost:4200/breeds
+    component: CityComponent
   }
 ];
 
