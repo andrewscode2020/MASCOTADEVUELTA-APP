@@ -18,6 +18,7 @@ import { DetalleMascotaComponent } from './components/detalle-mascota/detalle-ma
 import { BreedComponent } from './components/breed/breed.component';
 import { StateComponent } from './components/state/state.component';
 import { CityComponent } from './components/city/city.component';
+import { CountryComponent } from './components/country/country.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CityComponent } from './components/city/city.component';
     DetalleMascotaComponent,
     BreedComponent,
     StateComponent,
-    CityComponent
+    CityComponent,
+    CountryComponent
   ],
   imports: [
     BrowserModule,
