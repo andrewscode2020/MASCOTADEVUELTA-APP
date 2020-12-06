@@ -1,4 +1,4 @@
 export interface City {
-  name: String,
-  state: String
+  name: String;
+  state: String;
 }

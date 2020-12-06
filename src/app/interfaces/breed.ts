@@ -1,4 +1,4 @@
 export interface Breed {
-    name: String,
-    petType: String
+    name: String;
+    petType: String;
 }
