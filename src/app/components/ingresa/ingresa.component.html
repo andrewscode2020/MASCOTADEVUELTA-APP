@@ -1,38 +1,46 @@
 <div class="container rounded-lg bg-mdv3 d-flex justify-content-center px-0">
-  <form class="form-group text-center w-75 px-4 my-0">
-    <img
-      class="imagenIngreso rounded-circle my-3"
-      src="../../../assets/images/imagenIngreso.jpg"
-      alt=""
-      height="200"
-    />
+  <form
+    class="text-center w-75 px-4 my-0 needs-validation"
+    [formGroup]="formularioInicioDeSesion"
+    (ngSubmit)="iniciarSesion()"
+  >
+    <div class="form-group">
+      <img
+        class="imagenIngreso rounded-circle my-3"
+        src="../../../assets/images/imagenIngreso.jpg"
+        alt=""
+        height="200"
+      />
 
-    <input
-      type="email"
-      id="ingreseCorreo"
-      class="form-control my-2"
-      placeholder="Correo electrónico"
-      required
-      autofocus
-    />
+      <input
+        type="email"
+        id="ingreseCorreo"
+        class="form-control my-2"
+        formControlName="loginEmail"
+        placeholder="Correo electrónico"
+        required
+        autofocus
+      />
 
-    <input
-      type="password"
-      id="ingreseContraseña"
-      class="form-control my-2"
-      placeholder="Contraseña"
-      required
-    />
+      <input
+        type="password"
+        id="ingreseContraseña"
+        class="form-control my-2"
+        formControlName="loginPassword"
+        placeholder="Contraseña"
+        required
+      />
 
-    <!-- Checkbox Recordarme -->
-    <div class="checkbox mb-3">
-      <label> <input type="checkbox" value="recordarme" /> Recordarme </label>
+      <!-- Checkbox Recordarme -->
+      <div class="checkbox mb-3">
+        <label> <input type="checkbox" value="recordarme" /> Recordarme </label>
+      </div>
+
+      <!-- Botón Ingresar -->
+      <button class="btn btn-lg btn-block bg-mdv1 text-light" type="submit">
+        Ingresar
+      </button>
+      <p class="mt-5 mb-3 text-center text-muted">&copy;2020</p>
     </div>
-
-    <!-- Botón Ingresar -->
-    <button class="btn btn-lg btn-block bg-mdv1 text-light" type="submit" data-dismiss="modal">
-      Ingresar
-    </button>
-    <p class="mt-5 mb-3 text-center text-muted">&copy;2020</p>
   </form>
 </div>
