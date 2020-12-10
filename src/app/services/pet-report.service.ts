@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PetReportService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  createNewReport(petData) {
+    const mdvToken = localStorage.getItem('mdvToken');
+    const mdvHeaders = new HttpHeaders({
+      Authorization: `Bearer ${mdvToken}`
+    })
+    return this.http.post(`${environment.API_URL}/petreports`, petData, {headers: mdvHeaders});
+  }
 }

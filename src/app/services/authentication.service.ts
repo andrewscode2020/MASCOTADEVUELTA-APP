@@ -14,10 +14,6 @@ export class AuthenticationService {
     return this.http.post(this.BASE_URL, credenciales)
   }
 
-  cerrarSesion() {
-    localStorage.removeItem('mdvToken')
-  }
-
   guardarToken(token: any) {
     localStorage.setItem('mdvToken', token)
   }

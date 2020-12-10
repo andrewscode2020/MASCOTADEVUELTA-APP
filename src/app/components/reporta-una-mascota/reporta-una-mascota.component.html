@@ -1,12 +1,13 @@
 <main class="p-2">
-  <form>
+  <form [formGroup]="newPetReport" (ngSubmit)="registerNewPet()">
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="reportType"
             type="radio"
-            name="exampleRadios"
+            name="reportType"
             id="mascotaPerdida"
             value="option1"
             checked
@@ -20,8 +21,9 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="reportType"
             type="radio"
-            name="exampleRadios"
+            name="reportType"
             id="mascotaEncontrada"
             value="option2"
             checked
@@ -35,17 +37,31 @@
     <div class="form-row p-2">
       <div class="col-sm-12">
         <div class="custom-file">
-          <input type="file" class="custom-file-input" id="customFile" />
+          <input
+            type="file"
+            class="custom-file-input"
+            formControlName="petPic"
+            id="customFile"
+          />
           <label class="custom-file-label" for="customFile">Choose file</label>
         </div>
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <input type="text" class="form-control" placeholder="Nombre" />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="name"
+          placeholder="Nombre"
+        />
       </div>
       <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" id="tipoMascota">
+        <select
+          class="custom-select mr-sm-2"
+          formControlName="petType"
+          id="tipoMascota"
+        >
           <option selected>Tipo mascota</option>
           <option value="1">Perro</option>
           <option value="2">Gato</option>
@@ -54,14 +70,18 @@
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" id="sexo">
+        <select
+          class="custom-select mr-sm-2"
+          formControlName="gender"
+          id="sexo"
+        >
           <option selected>Sexo</option>
           <option value="1">Hembra</option>
           <option value="2">Macho</option>
         </select>
       </div>
       <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" id="raza">
+        <select class="custom-select mr-sm-2" formControlName="breed" id="raza">
           <option selected>Raza</option>
           <option value="1">Golden Retriver</option>
           <option value="2">Pitbull</option>
@@ -73,10 +93,19 @@
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <input type="text" class="form-control" placeholder="Edad" />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="age"
+          placeholder="Edad"
+        />
       </div>
       <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" id="tamaño">
+        <select
+          class="custom-select mr-sm-2"
+          formControlName="size"
+          id="tamaño"
+        >
           <option selected>Tamaño</option>
           <option value="1">Miniatura</option>
           <option value="2">Pequeño</option>
@@ -87,8 +116,12 @@
       </div>
     </div>
     <div class="form-row p-2">
-      <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" id="tipoPelo">
+      <!-- <div class="col-sm-12 col-md-6">
+        <select
+          class="custom-select mr-sm-2"
+          formControlName="gender"
+          id="tipoPelo"
+        >
           <option selected>Tipo de pelo</option>
           <option value="1">Corto</option>
           <option value="2">Largo y sedoso</option>
@@ -99,10 +132,10 @@
           <option value="7">Pelo perenne</option>
           <option value="8">Sin pelo</option>
         </select>
-      </div>
-      <div class="col-sm-12 col-md-6">
-        <input type="text" class="form-control" placeholder="Color" />
-      </div>
+      </div> -->
+      <!-- <div class="col-sm-12 col-md-6">
+        <input type="text" class="form-control" formControlName="size" placeholder="Color" />
+      </div> -->
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
@@ -110,10 +143,11 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="castrated"
             type="radio"
-            name="esterilizado"
+            name="castrated"
             id="sinCastrar"
-            value="si"
+            value="true"
             checked
           />
           <label class="form-check-label" for="sinCastrar"> Si </label>
@@ -121,10 +155,11 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="castrated"
             type="radio"
-            name="esterilizado"
+            name="castrated"
             id="castrado"
-            value="no"
+            value="false"
           />
           <label class="form-check-label" for="castrado"> No </label>
         </div>
@@ -134,10 +169,11 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="chip"
             type="radio"
             name="chip"
             id="conChip"
-            value="si"
+            value="true"
             checked
           />
           <label class="form-check-label" for="conChip"> Si </label>
@@ -145,10 +181,11 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="chip"
             type="radio"
             name="chip"
             id="sinChip"
-            value="no"
+            value="false"
           />
           <label class="form-check-label" for="sinChip"> No </label>
         </div>
@@ -156,14 +193,19 @@
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-12">
-        <span>Carácteristicas adicionales</span>
+        <span>Características adicionales</span>
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-12">
         <div class="container-fluid p-2">
           <div class="container-fluid mt-2 mb-2">
-            <input type="text" class="form-control" placeholder="" />
+            <input
+              type="text"
+              class="form-control"
+              formControlName="additionalFeatures"
+              placeholder=""
+            />
           </div>
           <div class="container-fluid mt-2 mb-2">
             <input type="text" class="form-control" placeholder="" />
@@ -184,14 +226,22 @@
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" id="pais">
+        <select
+          class="custom-select mr-sm-2"
+          formControlName="country"
+          id="pais"
+        >
           <option selected>País</option>
           <option value="1">Colombia</option>
           <option value="2">Ecuador</option>
         </select>
       </div>
       <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" id="departamento">
+        <select
+          class="custom-select mr-sm-2"
+          formControlName="state"
+          id="departamento"
+        >
           <option selected>Departamento</option>
           <option value="1">Cundinamarca</option>
           <option value="2">Boyacá</option>
@@ -201,7 +251,11 @@
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" id="ciudad">
+        <select
+          class="custom-select mr-sm-2"
+          formControlName="city"
+          id="ciudad"
+        >
           <option selected>Ciudad</option>
           <option value="1">Bogotá</option>
           <option value="2">Chia</option>
@@ -214,15 +268,30 @@
         </select>
       </div>
       <div class="col-sm-12 col-md-6">
-        <input type="text" class="form-control" placeholder="Barrio" />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="neighborhood"
+          placeholder="Barrio"
+        />
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <input type="date" class="form-control" placeholder="fecha" />
+        <input
+          type="date"
+          class="form-control"
+          formControlName="eventDate"
+          placeholder="fecha"
+        />
       </div>
       <div class="col-sm-12 col-md-6">
-        <input type="time" class="form-control" placeholder="hora" />
+        <input
+          type="time"
+          class="form-control"
+          formControlName="eventTime"
+          placeholder="hora"
+        />
       </div>
     </div>
     <div class="form-row p-2">
@@ -234,6 +303,7 @@
           rows="10"
           placeholder="Información adicional sobre la perdida/encuentro"
           class="form-control"
+          formControlName="eventDescription"
         ></textarea>
       </div>
     </div>
@@ -243,10 +313,11 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="reward"
             type="radio"
-            name="recompensa"
+            name="reward"
             id="conRecompensa"
-            value="si"
+            value="true"
             checked
           />
           <label class="form-check-label" for="conRecompensa"> Si </label>
@@ -254,16 +325,22 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="reward"
             type="radio"
-            name="recompensa"
+            name="reward"
             id="sinRecompensa"
-            value="no"
+            value="false"
           />
           <label class="form-check-label" for="sinRecompensa"> No </label>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
-        <input type="number" class="form-control" placeholder="valor" />
+        <input
+          type="number"
+          class="form-control"
+          formControlName="rewardValue"
+          placeholder="valor"
+        />
       </div>
     </div>
     <div class="form-row p-2">
@@ -272,10 +349,11 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="publicPhone"
             type="radio"
-            name="telPublico"
+            name="publicPhone"
             id="conTelPublico"
-            value="si"
+            value="true"
             checked
           />
           <label class="form-check-label" for="conTelPublico"> Si </label>
@@ -283,10 +361,11 @@
         <div class="form-check">
           <input
             class="form-check-input"
+            formControlName="publicPhone"
             type="radio"
-            name="telPublico"
+            name="publicPhone"
             id="sinTelPublico"
-            value="no"
+            value="false"
           />
           <label class="form-check-label" for="sinTelPublico"> No </label>
         </div>

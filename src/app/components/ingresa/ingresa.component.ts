@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import swal from 'sweetalert';
+declare let jQuery;
 
 @Component({
   selector: 'app-ingresa',
@@ -24,6 +25,7 @@ export class IngresaComponent {
       .subscribe((respuesta: any) => {
         this.autenticacionServicio.guardarToken(respuesta.jwt);
         swal('Exito', 'Has logrado iniciar sesión', 'success');
+        jQuery('#modalLogin').modal('hide');
       }, (error) => {
         console.error('Error autenticando el cliente: ', error);
         swal('Error', error.error.err, 'error');

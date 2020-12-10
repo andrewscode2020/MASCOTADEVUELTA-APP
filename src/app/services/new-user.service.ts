@@ -15,17 +15,3 @@ export class NewUserService {
   }
 
 }
-
-/*
-@Injectable({
-  providedIn: 'root'
-})
-export class ClienteService {
-
-  constructor(private http: HttpClient) { }
-
-  registrarCliente(datosCliente = {}) {
-    return this.http.post(`${environment.API_URL}/clientes`, datosCliente)
-  }
-
-}*/

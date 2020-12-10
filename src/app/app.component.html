@@ -58,7 +58,6 @@
             class="d-flex flex-column divIconosSup"
             data-toggle="modal"
             data-target="#modalLogin"
-            (click)="login = !login; newUser = !newUser"
           >
             <fa-icon
               [icon]="faSignInAlt"
@@ -67,7 +66,6 @@
             <a
               id="txtlogin"
               class="texto-usuario text-decoration-none text-mdv3"
-              href="#"
               >Ingresa</a
             >
           </div>
@@ -76,7 +74,7 @@
           <div
             id="divLogout"
             class="d-flex flex-column divIconosSup oculto"
-            (click)="login = !login; newUser = !newUser"
+            (click)="cerrarSesion()"
           >
             <fa-icon
               [icon]="faSignOutAlt"
@@ -85,7 +83,6 @@
             <a
               id="txtlogin"
               class="texto-usuario text-decoration-none text-mdv3"
-              href="#"
               >Salir</a
             >
           </div>
@@ -109,7 +106,6 @@
             <a
               id="txtRegistrate"
               class="texto-usuario text-decoration-none text-mdv3"
-              href="#"
               >Registrate</a
             >
           </div>
@@ -125,7 +121,6 @@
             <a
               id="txtUsuario"
               class="texto-usuario text-decoration-none text-mdv3"
-              href="#"
               >Usuario</a
             >
           </div>
