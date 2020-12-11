@@ -1,6 +1,6 @@
 <div class="row d-flex align-self-center justify-content-center bg-mdv3 p-2">
   <div class="col cols-sm-12 cols-md-2 d-flex align-self-center">
-    <span>Busqueda avanzada</span>
+    <button (click)="getAllPets()">Busqueda avanzada</button>
   </div>
   <div class="col cols-sm-12 cols-md-2">
     <select class="custom-select mr-sm-2" id="tipoReporte">
@@ -63,11 +63,11 @@
   </div>
   <!-- Cards imagenes-->
   <div class="col-md-10 col-sm-12 p-5">
-    <div class="card md-3 border-0">
+    <div class="card md-3 border-0" *ngFor="let report of reports">
       <div class="row mb-2">
         <div class="col-md-4 col-sm-12 d-flex align-items-center">
           <img
-            src="../../../assets/images/2dog.jpg"
+            src="{{ report.petPic }}"
             class="card-img imagenesPerritos"
             alt="..."
           />
@@ -77,23 +77,25 @@
             <!-- blueCard -->
             <div class="row d-flex containerBlueCard align-items-center">
               <div class="col-md-6 col-sm-4 d-flex flex-column">
-                <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2 mr-2"> loyalty </span>
-                  <span class="text-light h6">Hembra</span>
+                <div class="d-flex justify-content-left m-3">
+                  <span class="material-icons text-mdv2 mr-2"> wc </span>
+                  <span class="text-light h6">{{ report.gender }}</span>
                 </div>
-                <div class="d-flex justify-content-center m-3">
+                <div class="d-flex justify-content-left m-3">
                   <span class="material-icons text-mdv2 mr-2"> pets </span>
-                  <span class="text-light h6">2 años</span>
+                  <span class="text-light h6">{{ report.petType }}</span>
                 </div>
               </div>
               <div class="col-md-6 col-sm-4 d-flex flex-column">
-                <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2 mr-2"> favorite </span>
-                  <span class="text-light h6">1 de Otubre</span>
+                <div class="d-flex justify-content-left m-3">
+                  <span class="material-icons text-mdv2 mr-2"> today </span>
+                  <span class="text-light h6">{{
+                    report.eventDate | date: "MMM dd, yyyy"
+                  }}</span>
                 </div>
-                <div class="d-flex justify-content-center m-3">
+                <div class="d-flex justify-content-left m-3">
                   <span class="material-icons text-mdv2 mr-2"> place </span>
-                  <span class="text-light h6">Bogotá, Suba</span>
+                  <span class="text-light h6">{{ report.city }}</span>
                 </div>
               </div>
             </div>
@@ -102,53 +104,7 @@
                 id="verMas1"
                 class="botonDetalles"
                 routerLink="/detalleMascota"
-              >
-                Ver más
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card md-3 border-0">
-      <div class="row mt-2">
-        <div class="col-md-4 d-flex align-items-center">
-          <img
-            src="../../../assets/images/2.jpg"
-            class="card-img imagenesPerritos"
-            alt="..."
-          />
-        </div>
-        <div class="col-md-6 col-sm-10 d-flex align-items-center mx-5">
-          <div class="card-body bg-mdv1 blueCard">
-            <!-- blueCard -->
-            <div class="row d-flex containerBlueCard align-items-center">
-              <div class="col-md-6 col-sm-4 d-flex flex-column">
-                <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2 mr-2"> loyalty </span>
-                  <span class="text-light h6">Macho</span>
-                </div>
-                <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2 mr-2"> pets </span>
-                  <span class="text-light h6"> 4 años</span>
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-4 d-flex flex-column">
-                <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2 mr-2"> favorite </span>
-                  <span class="text-light h6">2 de febrero</span>
-                </div>
-                <div class="d-flex justify-content-center m-3">
-                  <span class="material-icons text-mdv2 mr-2"> place </span>
-                  <span class="text-light h6">Bogotá, Salitre</span>
-                </div>
-              </div>
-            </div>
-            <div class="row w-100 d-flex justify-content-end">
-              <button
-                id="verMas2"
-                class="botonDetalles"
-                routerLink="/detalleMascota"
+                (click)="getOnePet('5fd18330f5c56b3d24087873')"
               >
                 Ver más
               </button>

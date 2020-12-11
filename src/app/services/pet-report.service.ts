@@ -16,4 +16,12 @@ export class PetReportService {
     })
     return this.http.post(`${environment.API_URL}/petreports`, petData, {headers: mdvHeaders});
   }
+
+  getReport(petId) {
+    return this.http.get(`${environment.API_URL}/petreports/${petId}`);
+  }
+
+  getAllReports() {
+    return this.http.get(`${environment.API_URL}/petreports`);
+  }
 }
