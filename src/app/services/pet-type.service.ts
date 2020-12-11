@@ -1,25 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Country } from '../interfaces/country';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-
-
-
-
+import { PetType } from '../interfaces/pet-type';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CountriesService {
+export class PetTypeService {
 
   constructor(private http: HttpClient) { }
-  BASE_URL = `${environment.API_URL}/countries`
+  BASE_URL = `${environment.API_URL}/pettypes`
 
-  getCountries() {
+  getPetTypes() {
 
-    return this.http.get<Array<Country>>(this.BASE_URL)
+    return this.http.get<Array<PetType>>(this.BASE_URL)
 
   }
 
 }
-

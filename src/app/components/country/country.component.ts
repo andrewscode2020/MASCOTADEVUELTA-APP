@@ -9,23 +9,26 @@ import { CountriesService } from '../../services/countries.service';
   styleUrls: ['./country.component.scss']
 })
 export class CountryComponent implements OnInit {
-  countriesL : Array<Country> = [];
+  countriesL: Array<Country> = [];
   constructor(private countriesService: CountriesService) { }
 
 
 
-  ngOnInit(): void { this.countries();
+  ngOnInit(): void {
+    this.countries();
   }
 
-  countries() { this.countriesService.getCountries().subscribe(
-    (countriesList) => {
-      this.countriesL = countriesList;
+  countries() {
+    this.countriesService.getCountries().subscribe(
+      (countriesList) => {
+        this.countriesL = countriesList;
 
-    },
-(error) => {
-  console.error('No se pudo cargar los paises',error)
+      },
+      (error) => {
+        console.error('No se pudo cargar los paises', error)
 
-}
-  )}
+      }
+    )
+  }
 
 }
