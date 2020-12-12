@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Breed } from '../interfaces/breed';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'

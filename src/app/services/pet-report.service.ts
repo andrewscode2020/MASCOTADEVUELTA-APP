@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class PetReportService {
     const mdvHeaders = new HttpHeaders({
       Authorization: `Bearer ${mdvToken}`
     })
-    return this.http.post(`${environment.API_URL}/petreports`, petData, {headers: mdvHeaders});
+    return this.http.post(`${environment.API_URL}/petreports`, petData, { headers: mdvHeaders });
   }
 
   getReport(petId) {
