@@ -9,7 +9,7 @@
     </select>
   </div>
   <div class="col cols-sm-12 cols-md-2">
-    <select class="custom-select mr-sm-2" id="petType" name="petType" [(ngModel)]="petType">
+    <select class="custom-select mr-sm-2" id="petType" name="petType" [(ngModel)]="petType" (change)="getBreedsForPetType()">
       <option [value]="petType.name" *ngFor="let petType of petTypes">{{petType.name}}</option>
     </select>
   </div>
