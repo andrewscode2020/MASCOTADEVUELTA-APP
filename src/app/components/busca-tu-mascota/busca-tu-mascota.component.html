@@ -9,7 +9,8 @@
     </select>
   </div>
   <div class="col cols-sm-12 cols-md-2">
-    <select class="custom-select mr-sm-2" id="petType" name="petType" [(ngModel)]="petType" (change)="getBreedsForPetType()">
+    <select class="custom-select mr-sm-2" id="petType" name="petType" [(ngModel)]="petType"
+      (change)="getBreedsForPetType()">
       <option [value]="petType.name" *ngFor="let petType of petTypes">{{petType.name}}</option>
     </select>
   </div>
@@ -17,14 +18,6 @@
     <select class="custom-select mr-sm-2" id="breed" name="breed" [(ngModel)]="breed">
       <option [value]="breed.name" *ngFor="let breed of breeds">{{breed.name}}</option>
     </select>
-    <!-- <select class="custom-select mr-sm-2" id="raza">
-      <option selected>Raza</option>
-      <option value="1">Golden Retriver</option>
-      <option value="2">Pitbull</option>
-      <option value="3">Labrador</option>
-      <option value="4">Criollo</option>
-      <option value="5">Sin identificar</option>
-    </select> -->
   </div>
   <div class="col cols-sm-12 cols-md-2">
     <select class="custom-select mr-sm-2" id="gender" name="gender" [(ngModel)]="gender">
