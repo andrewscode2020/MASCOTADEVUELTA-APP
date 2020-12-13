@@ -2,11 +2,9 @@
   <div
     class="row d-flex align-items-center justify-content-center bg-mdv3 py-3"
   >
-    <div class="col col-md-2 d-flex align-self-center">
-      <button class="" (click)="getAllPets()">Busqueda avanzada</button>
-      <button class="" (click)="searchReports()">Busqueda con filtro</button>
-    </div>
+    
     <div class="col col-md-2">
+      <label>¿Donde quieres buscar?</label>
       <select
         class="custom-select mr-sm-2"
         id="reportType"
@@ -19,6 +17,7 @@
       </select>
     </div>
     <div class="col cols-sm-12 cols-md-2">
+      <label>¿A quien buscas?</label>
       <select
         class="custom-select mr-sm-2"
         id="petType"
@@ -32,6 +31,7 @@
       </select>
     </div>
     <div class="col cols-sm-12 cols-md-2">
+      <label>Raza</label>
       <select
         class="custom-select mr-sm-2"
         id="breed"
@@ -44,6 +44,7 @@
       </select>
     </div>
     <div class="col cols-sm-12 cols-md-2">
+      <label>Genero</label>
       <select
         class="custom-select mr-sm-2"
         id="gender"
@@ -56,17 +57,20 @@
       </select>
     </div>
     <div class="col cols-sm-12 cols-md-2">
-      <select class="custom-select mr-sm-2" id="ciudad">
-        <option selected>Ciudad</option>
-        <option value="1">Bogotá</option>
-        <option value="2">Chia</option>
-        <option value="3">La calera</option>
-        <option value="4">Cota</option>
-        <option value="5">Tenjo</option>
-        <option value="6">Funza</option>
-        <option value="7">Mosquera</option>
-        <option value="8">Úbate</option>
+      <label>Ciudad</label>
+      <select
+        class="custom-select mr-sm-2"
+        id="city"
+        name="city"
+        [(ngModel)]="city"
+      >
+        <option [value]="city.value" *ngFor="let city of cities">
+          {{ city.name }}
+        </option>
       </select>
+    </div>
+    <div class="col col-md-2 d-flex align-self-center">      
+      <button class="" (click)="searchReports()">Busqueda con filtro</button>
     </div>
   </div>
   <div class="row">

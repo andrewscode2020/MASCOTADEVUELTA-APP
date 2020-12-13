@@ -4,6 +4,8 @@ import { Breed } from 'src/app/interfaces/breed';
 import { BreedService } from "../../services/breed.service"
 import { PetType } from 'src/app/interfaces/pet-type';
 import { PetTypeService } from '../../services/pet-type.service';
+import { City } from 'src/app/interfaces/city';
+import { CityService } from '../../services/city.service';
 
 @Component({
   selector: 'app-busca-tu-mascota',
@@ -18,11 +20,13 @@ export class BuscaTuMascotaComponent {
   petType: "";
   breed: "";
   gender: "";
+  city: "";
   petTypes: Array<PetType> = []
   breeds: Array<Breed> = [];
+  cities: Array<City> = [];
 
 
-  constructor(private petReportService: PetReportService, private petTypeService: PetTypeService, private breedService: BreedService) { }
+  constructor(private petReportService: PetReportService, private petTypeService: PetTypeService, private breedService: BreedService, private cityService: CityService) { }
 
   getOnePet(petId) {
     this.petReportService.getReport(petId)
@@ -51,6 +55,8 @@ export class BuscaTuMascotaComponent {
 
   ngOnInit(): void {
     this.getPetTypesList();
+    this.getCities();
+    this.getAllPets();
   }
 
   getPetTypesList() {
@@ -84,6 +90,19 @@ export class BuscaTuMascotaComponent {
     if (this.reportType === "") {
       console.log("no ha selecionado el tipo de reporte")
     }
+  }
+
+  getCities() {
+    this.cityService.getCities()
+      .subscribe(
+        (citiesList) => {
+          debugger
+          this.cities = citiesList;
+        },
+        (error) => {
+          console.error('No se pudo cargar las ciudades', error)
+        }
+      )
   }
 
 }

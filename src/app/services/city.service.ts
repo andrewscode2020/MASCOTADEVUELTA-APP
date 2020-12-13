@@ -12,6 +12,10 @@ export class CityService {
 
   constructor(private http: HttpClient) { }
 
+  getCities() {
+    return this.http.get<Array<City>>(`${this.BASE_URL}`)
+  }
+
   getCitiesByState(state: String) {
     return this.http.get<Array<City>>(`${this.BASE_URL}/${state}`)
   }
