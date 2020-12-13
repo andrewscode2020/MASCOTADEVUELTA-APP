@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PetReportService } from 'src/app/services/pet-report.service';
 import { Breed } from 'src/app/interfaces/breed';
 import { BreedService } from "../../services/breed.service"
@@ -12,7 +12,7 @@ import { CityService } from '../../services/city.service';
   templateUrl: './busca-tu-mascota.component.html',
   styleUrls: ['./busca-tu-mascota.component.scss']
 })
-export class BuscaTuMascotaComponent {
+export class BuscaTuMascotaComponent implements OnInit {
   reports: [];
   reportTypes: Array<Object> = [{ text: "Perdidos", value: "Perdido" }, { text: "Encontrado", value: "Encontrados" }];
   genders: Array<Object> = [{ text: "Macho", value: "Macho" }, { text: "Hembra", value: "Hembra" }];
