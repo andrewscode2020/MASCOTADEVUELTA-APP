@@ -56,7 +56,7 @@ export class ReportaUnaMascotaComponent {
       //Recorro el arreglo data para llenar el petData:
       for (let key of data) {
         if (key === "petPic") {
-          const imageInput: HTMLElement = document.querySelector('input#customFile');
+          const imageInput: HTMLInputElement = document.querySelector('input#customFile');
           // console.log(imageInput);
           // console.log(imageInput.files[0]);
           petData.append('petPic', imageInput.files[0]);
