@@ -29,6 +29,7 @@ export class BuscaTuMascotaComponent {
   constructor(private petReportService: PetReportService, private petTypeService: PetTypeService, private breedService: BreedService, private cityService: CityService) { }
 
   getOnePet(petId) {
+    debugger
     this.petReportService.getReport(petId)
       .subscribe(
         (res) => {
@@ -96,7 +97,6 @@ export class BuscaTuMascotaComponent {
     this.cityService.getCities()
       .subscribe(
         (citiesList) => {
-          debugger
           this.cities = citiesList;
         },
         (error) => {

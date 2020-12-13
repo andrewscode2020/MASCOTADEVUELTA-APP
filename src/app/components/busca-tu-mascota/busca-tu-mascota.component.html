@@ -1,16 +1,9 @@
 <div class="container-fluid">
-  <div
-    class="row d-flex align-items-center justify-content-center bg-mdv3 py-3"
-  >
-    
+  <div class="row d-flex align-items-center justify-content-center bg-mdv3 py-3">
+
     <div class="col col-md-2">
       <label>¿Donde quieres buscar?</label>
-      <select
-        class="custom-select mr-sm-2"
-        id="reportType"
-        name="reportType"
-        [(ngModel)]="reportType"
-      >
+      <select class="custom-select mr-sm-2" id="reportType" name="reportType" [(ngModel)]="reportType">
         <option [value]="item.value" *ngFor="let item of reportTypes">
           {{ item.text }}
         </option>
@@ -18,13 +11,8 @@
     </div>
     <div class="col cols-sm-12 cols-md-2">
       <label>¿A quien buscas?</label>
-      <select
-        class="custom-select mr-sm-2"
-        id="petType"
-        name="petType"
-        [(ngModel)]="petType"
-        (change)="getBreedsForPetType()"
-      >
+      <select class="custom-select mr-sm-2" id="petType" name="petType" [(ngModel)]="petType"
+        (change)="getBreedsForPetType()">
         <option [value]="petType.name" *ngFor="let petType of petTypes">
           {{ petType.name }}
         </option>
@@ -32,12 +20,7 @@
     </div>
     <div class="col cols-sm-12 cols-md-2">
       <label>Raza</label>
-      <select
-        class="custom-select mr-sm-2"
-        id="breed"
-        name="breed"
-        [(ngModel)]="breed"
-      >
+      <select class="custom-select mr-sm-2" id="breed" name="breed" [(ngModel)]="breed">
         <option [value]="breed.name" *ngFor="let breed of breeds">
           {{ breed.name }}
         </option>
@@ -45,12 +28,7 @@
     </div>
     <div class="col cols-sm-12 cols-md-2">
       <label>Genero</label>
-      <select
-        class="custom-select mr-sm-2"
-        id="gender"
-        name="gender"
-        [(ngModel)]="gender"
-      >
+      <select class="custom-select mr-sm-2" id="gender" name="gender" [(ngModel)]="gender">
         <option [value]="gender.value" *ngFor="let gender of genders">
           {{ gender.text }}
         </option>
@@ -58,26 +36,19 @@
     </div>
     <div class="col cols-sm-12 cols-md-2">
       <label>Ciudad</label>
-      <select
-        class="custom-select mr-sm-2"
-        id="city"
-        name="city"
-        [(ngModel)]="city"
-      >
+      <select class="custom-select mr-sm-2" id="city" name="city" [(ngModel)]="city">
         <option [value]="city.value" *ngFor="let city of cities">
           {{ city.name }}
         </option>
       </select>
     </div>
-    <div class="col col-md-2 d-flex align-self-center">      
+    <div class="col col-md-2 d-flex align-self-center">
       <button class="" (click)="searchReports()">Busqueda con filtro</button>
     </div>
   </div>
   <div class="row">
     <!-- Columna Info -->
-    <div
-      class="col-md-2 col-sm-10 d-flex flex-column align-items-left justify-content-start p-5"
-    >
+    <div class="col-md-2 col-sm-10 d-flex flex-column align-items-left justify-content-start p-5">
       <span>Total de resultados:</span>
       <span>Mascotas por ciudad:</span>
       <span>Bogotá:</span>
@@ -91,11 +62,7 @@
       <div class="card my-2 p-0" *ngFor="let report of reports">
         <div class="row my-2 m-0">
           <div class="col-md-4 d-flex align-items-center">
-            <img
-              src="{{ report.petPic }}"
-              class="card-img imagenesPerritos"
-              alt="..."
-            />
+            <img src="{{ report.petPic }}" class="card-img imagenesPerritos" alt="..." />
           </div>
           <div class="col-md-6 col-sm-10 d-flex align-items-center mx-5">
             <div class="card-body bg-mdv1 blueCard">
@@ -103,44 +70,32 @@
               <div class="row d-flex containerBlueCard align-items-center">
                 <!-- Columna 1: Género y Tipo de Mascota -->
                 <div class="col-md-4 d-flex flex-column">
-                  <div
-                    class="d-flex justify-content-left align-items-center m-3"
-                  >
+                  <div class="d-flex justify-content-left align-items-center m-3">
                     <span class="material-icons text-mdv2 mr-2"> wc </span>
                     <span class="text-light h6">{{ report.gender }}</span>
                   </div>
-                  <div
-                    class="d-flex justify-content-left align-items-center m-3"
-                  >
+                  <div class="d-flex justify-content-left align-items-center m-3">
                     <span class="material-icons text-mdv2 mr-2"> pets </span>
                     <span class="text-light h6">{{ report.petType }}</span>
                   </div>
                 </div>
                 <!-- Columna 2: Fecha del Evento y Ciudad -->
                 <div class="col-md-4 d-flex flex-column">
-                  <div
-                    class="d-flex justify-content-left align-items-center m-3"
-                  >
+                  <div class="d-flex justify-content-left align-items-center m-3">
                     <span class="material-icons text-mdv2 mr-2"> today </span>
                     <span class="text-light h6">{{
                       report.eventDate | date: "MMM dd, yyyy"
-                    }}</span>
+                      }}</span>
                   </div>
-                  <div
-                    class="d-flex justify-content-left align-items-center m-3"
-                  >
+                  <div class="d-flex justify-content-left align-items-center m-3">
                     <span class="material-icons text-mdv2 mr-2"> place </span>
                     <span class="text-light h6">{{ report.city }}</span>
                   </div>
                 </div>
                 <!-- Columna 3: Botón ver más -->
                 <div class="col-md-4 d-flex flex-column justify-content-center">
-                  <button
-                    id="verMas1"
-                    class="botonDetalles btn"
-                    routerLink="/detalleMascota"
-                    (click)="getOnePet('5fd18330f5c56b3d24087873')"
-                  >
+                  <button id="verMas1" class="botonDetalles btn" routerLink="/detalleMascota"
+                    (click)="getOnePet(report._id)">
                     Ver más
                   </button>
                 </div>
