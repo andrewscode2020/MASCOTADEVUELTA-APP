@@ -47,9 +47,35 @@ export class ReportaUnaMascotaComponent {
   }
 
   registerNewPet() {
-    // console.log(this.newPetReport.value);
     if (this.newPetReport.valid) {
-      this.petReportService.createNewReport(this.newPetReport.value)
+      let petData = new FormData();
+      //Objeto que recibo del formulario:
+      const formObj = this.newPetReport.value;
+      //Hago un arreglo de las llaves del objeto:
+      const data = Object.keys(formObj);
+      //Recorro el arreglo data para llenar el petData:
+      for (let key of data) {
+        if (key === "petPic") {
+          const imageInput: HTMLElement = document.querySelector('input#customFile');
+          // console.log(imageInput);
+          // console.log(imageInput.files[0]);
+          petData.append('petPic', imageInput.files[0]);
+        } else {
+          petData.append(key, formObj[key]);
+        }
+      }
+
+      // console.log('petData ', petData.get('reportType'));
+
+      // petData.append('reportType', formObj.reportType);
+      // petData.append('petType', formObj.petType);
+      // petData.append('gender', formObj.gender);
+      // petData.append('eventDate', formObj.eventDate);
+      // petData.append('city', formObj.city);
+      // const imageInput: HTMLElement = document.querySelector('input#customFile');
+      // petData.append('petPic', imageInput.files[0]);
+      
+      this.petReportService.createNewReport(petData)
       .subscribe(
         (res) => {
           console.log('Mascota registrada exitosamente', res)
@@ -60,6 +86,5 @@ export class ReportaUnaMascotaComponent {
       )
     }
   }
-
 
 }
