@@ -28,7 +28,6 @@ export class ReportaUnaMascotaComponent {
         petPic: [],
         additionalFeatures: '',
         eventDate: '',
-        eventTime: '',
         eventDescription: '',
         country: '',
         state: '',
