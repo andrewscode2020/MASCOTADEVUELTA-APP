@@ -1,35 +1,26 @@
 <main class="p-2">
   <form [formGroup]="newPetReport" (ngSubmit)="registerNewPet()">
     <div class="form-row p-2">
+      <div class="col-sm-12 col-md-12">
+        <h1 class="text-mdv3">Datos de la mascota</h1>
+      </div>
+    </div>
+    <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="reportType"
-            type="radio"
-            name="reportType"
-            id="mascotaPerdida"
-            value="Perdido"
-            checked
-          />
+          <input class="form-check-input" formControlName="reportType" type="radio" name="reportType"
+            id="mascotaPerdida" value="Perdido" checked />
           <label class="form-check-label" for="mascotaPerdida">
-            Perdi mi mascota
+            Esta perdida
           </label>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="reportType"
-            type="radio"
-            name="reportType"
-            id="mascotaEncontrada"
-            value="Encontrado"
-            checked
-          />
+          <input class="form-check-input" formControlName="reportType" type="radio" name="reportType"
+            id="mascotaEncontrada" value="Encontrado" checked />
           <label class="form-check-label" for="mascotaEncontrada">
-            Encontre una mascota
+            Lo encontre
           </label>
         </div>
       </div>
@@ -37,76 +28,61 @@
     <div class="form-row p-2">
       <div class="col-sm-12">
         <div class="custom-file">
-          <input
-            type="file"
-            class="custom-file-input"
-            formControlName="petPic"
-            id="customFile"
-          />
+          <input type="file" class="custom-file-input" formControlName="petPic" id="customFile" />
           <label class="custom-file-label" for="customFile">Choose file</label>
         </div>
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="name"
-          placeholder="Nombre"
-        />
+        <label>Nombre</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="Nombre" />
       </div>
       <div class="col-sm-12 col-md-6">
-        <select
-          class="custom-select mr-sm-2"
-          formControlName="petType"
-          id="tipoMascota"
-        >
-          <option selected>Tipo mascota</option>
-          <option value="Perro">Perro</option>
-          <option value="Gato">Gato</option>
+        <label>Tipo mascota</label>
+        <select class="custom-select mr-sm-2" formControlName="petType" id="petType" name="petType"
+          (change)="getBreedsForPetType()">
+          <option [value]="petType.name" *ngFor="let petType of petTypes">
+            {{ petType.name }}
+          </option>
         </select>
       </div>
     </div>
     <div class="form-row p-2">
+
       <div class="col-sm-12 col-md-6">
-        <select
-          class="custom-select mr-sm-2"
-          formControlName="gender"
-          id="sexo"
-        >
-          <option selected>Sexo</option>
-          <option value="Hembra">Hembra</option>
-          <option value="Macho">Macho</option>
+        <label>raza</label>
+        <select class="custom-select mr-sm-2" id="breed" name="breed" formControlName="breed">
+          <option [value]="breed.name" *ngFor="let breed of breeds">
+            {{ breed.name }}
+          </option>
         </select>
-      </div>
-      <div class="col-sm-12 col-md-6">
-        <select class="custom-select mr-sm-2" formControlName="breed" id="raza">
+        <!-- <select class="custom-select mr-sm-2" formControlName="breed" id="raza">
           <option selected>Raza</option>
           <option value="Golden Retriver">Golden Retriver</option>
           <option value="Pitbull">Pitbull</option>
           <option value="Labrador">Labrador</option>
           <option value="Criollo">Criollo</option>
           <option value="Sin identificar">Sin identificar</option>
+        </select> -->
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <label>Genero</label>
+        <select class="custom-select mr-sm-2" id="gender" name="gender" formControlName="gender">
+          <option [value]="gender.value" *ngFor="let gender of genders">
+            {{ gender.text }}
+          </option>
         </select>
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="age"
-          placeholder="Edad"
-        />
+        <label>Edad</label>
+        <input type="text" class="form-control" formControlName="age" placeholder="Años" />
       </div>
       <div class="col-sm-12 col-md-6">
-        <select
-          class="custom-select mr-sm-2"
-          formControlName="size"
-          id="tamaño"
-        >
-          <option selected>Tamaño</option>
+        <label>Tamaño</label>
+        <select class="custom-select mr-sm-2" formControlName="size" id="tamaño">
           <option value="Miniatura">Miniatura</option>
           <option value="Pequeño">Pequeño</option>
           <option value="Mediano">Mediano</option>
@@ -120,52 +96,25 @@
       <div class="col-sm-12 col-md-6">
         <div><span>¿Castrado?</span></div>
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="castrated"
-            type="radio"
-            name="castrated"
-            id="sinCastrar"
-            value="true"
-            checked
-          />
+          <input class="form-check-input" formControlName="castrated" type="radio" name="castrated" id="sinCastrar"
+            value="true" checked />
           <label class="form-check-label" for="sinCastrar"> Si </label>
         </div>
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="castrated"
-            type="radio"
-            name="castrated"
-            id="castrado"
-            value="false"
-          />
+          <input class="form-check-input" formControlName="castrated" type="radio" name="castrated" id="castrado"
+            value="false" />
           <label class="form-check-label" for="castrado"> No </label>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
         <div><span>¿Tiene Chip?</span></div>
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="chip"
-            type="radio"
-            name="chip"
-            id="conChip"
-            value="true"
-            checked
-          />
+          <input class="form-check-input" formControlName="chip" type="radio" name="chip" id="conChip" value="true"
+            checked />
           <label class="form-check-label" for="conChip"> Si </label>
         </div>
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="chip"
-            type="radio"
-            name="chip"
-            id="sinChip"
-            value="false"
-          />
+          <input class="form-check-input" formControlName="chip" type="radio" name="chip" id="sinChip" value="false" />
           <label class="form-check-label" for="sinChip"> No </label>
         </div>
       </div>
@@ -179,12 +128,7 @@
       <div class="col-sm-12 col-md-12">
         <div class="container-fluid p-2">
           <div class="container-fluid mt-2 mb-2">
-            <input
-              type="text"
-              class="form-control"
-              formControlName="additionalFeatures"
-              placeholder=""
-            />
+            <input type="text" class="form-control" formControlName="additionalFeatures" placeholder="" />
           </div>
           <div class="container-fluid mt-2 mb-2">
             <input type="text" class="form-control" placeholder="" />
@@ -200,144 +144,90 @@
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-12">
-        <span>Visto por última vez / Encontrado en</span>
+        <h1 class="text-mdv3">Visto por última vez / Encontrado en</h1>
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <select
-          class="custom-select mr-sm-2"
-          formControlName="country"
-          id="pais"
-        >
-          <option selected>País</option>
-          <option value="Colombia">Colombia</option>
-          <option value="Ecuador">Ecuador</option>
+        <label>País</label>
+        <select class="custom-select mr-sm-2" id="country" name="country" formControlName="country"
+          (change)="getStates()">
+          <option [value]="country.name" *ngFor="let country of countries">
+            {{ country.name }}
+          </option>
         </select>
       </div>
       <div class="col-sm-12 col-md-6">
-        <select
-          class="custom-select mr-sm-2"
-          formControlName="state"
-          id="departamento"
-        >
-          <option selected>Departamento</option>
-          <option value="Cundinamarca">Cundinamarca</option>
-          <option value="Boyacá">Boyacá</option>
-          <option value="Antioquia">Antioquia</option>
+        <label>Departamento</label>
+        <select class="custom-select mr-sm-2" id="state" name="state" formControlName="state" (change)="getCities()">
+          <option [value]="state.name" *ngFor="let state of states">
+            {{ state.name }}
+          </option>
         </select>
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <select
-          class="custom-select mr-sm-2"
-          formControlName="city"
-          id="ciudad"
-        >
-          <option selected>Ciudad</option>
-          <option value="Bogotá">Bogotá</option>
-          <option value="Chia">Chia</option>
-          <option value="La calera">La calera</option>
-          <option value="Cota">Cota</option>
-          <option value="Tenjo">Tenjo</option>
-          <option value="Funza">Funza</option>
-          <option value="Mosquera">Mosquera</option>
-          <option value="Úbate">Úbate</option>
+        <label>Ciudad</label>
+        <select class="custom-select mr-sm-2" id="city" name="city" formControlName="city">
+          <option [value]="city.name" *ngFor="let city of cities">
+            {{ city.name }}
+          </option>
         </select>
       </div>
       <div class="col-sm-12 col-md-6">
-        <input
-          type="text"
-          class="form-control"
-          formControlName="neighborhood"
-          placeholder="Barrio"
-        />
+        <label>Barrio</label>
+        <input type="text" class="form-control" formControlName="neighborhood" />
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 col-md-6">
-        <input
-          type="date"
-          class="form-control"
-          formControlName="eventDate"
-          placeholder="fecha"
-        />
+        <label>Fecha</label>
+        <input type="date" class="form-control" formControlName="eventDate" />
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12">
-        <textarea
-          name="datosPerdida"
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Información adicional sobre la perdida/encuentro"
-          class="form-control"
-          formControlName="eventDescription"
-        ></textarea>
+        <textarea name="datosPerdida" id="" cols="30" rows="10"
+          placeholder="Información adicional sobre la perdida/encuentro" class="form-control"
+          formControlName="eventDescription"></textarea>
+      </div>
+    </div>
+    <div class="form-row p-2">
+      <div class="col-sm-12 col-md-12">
+        <h1 class="text-mdv3">Datos adicionales</h1>
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 md-6">
         <div><span>¿Deseas dar un recompensa?</span></div>
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="reward"
-            type="radio"
-            name="reward"
-            id="conRecompensa"
-            value="true"
-            checked
-          />
+          <input class="form-check-input" formControlName="reward" type="radio" name="reward" id="conRecompensa"
+            value="true" checked />
           <label class="form-check-label" for="conRecompensa"> Si </label>
         </div>
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="reward"
-            type="radio"
-            name="reward"
-            id="sinRecompensa"
-            value="false"
-          />
+          <input class="form-check-input" formControlName="reward" type="radio" name="reward" id="sinRecompensa"
+            value="false" />
           <label class="form-check-label" for="sinRecompensa"> No </label>
         </div>
       </div>
       <div class="col-sm-12 col-md-6">
-        <input
-          type="number"
-          class="form-control"
-          formControlName="rewardValue"
-          placeholder="valor"
-        />
+        <label>Valor</label>
+        <input type="number" class="form-control" formControlName="rewardValue" />
       </div>
     </div>
     <div class="form-row p-2">
       <div class="col-sm-12 md-6">
         <div><span>¿Deseas que tu telefono sea público?</span></div>
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="publicPhone"
-            type="radio"
-            name="publicPhone"
-            id="conTelPublico"
-            value="true"
-            checked
-          />
+          <input class="form-check-input" formControlName="publicPhone" type="radio" name="publicPhone"
+            id="conTelPublico" value="true" checked />
           <label class="form-check-label" for="conTelPublico"> Si </label>
         </div>
         <div class="form-check">
-          <input
-            class="form-check-input"
-            formControlName="publicPhone"
-            type="radio"
-            name="publicPhone"
-            id="sinTelPublico"
-            value="false"
-          />
+          <input class="form-check-input" formControlName="publicPhone" type="radio" name="publicPhone"
+            id="sinTelPublico" value="false" />
           <label class="form-check-label" for="sinTelPublico"> No </label>
         </div>
       </div>
