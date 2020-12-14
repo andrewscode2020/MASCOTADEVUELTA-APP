@@ -14,7 +14,7 @@ import { CityService } from '../../services/city.service';
 })
 export class BuscaTuMascotaComponent implements OnInit {
   reports: [];
-  reportTypes: Array<Object> = [{ text: "Perdidos", value: "Perdido" }, { text: "Encontrado", value: "Encontrados" }];
+  reportTypes: Array<Object> = [{ text: "Perdidos", value: "Perdido" }, { text: "Encontrado", value: "Encontrado" }];
   genders: Array<Object> = [{ text: "Macho", value: "Macho" }, { text: "Hembra", value: "Hembra" }];
   reportType: "";
   petType: "";
@@ -111,7 +111,7 @@ export class BuscaTuMascotaComponent implements OnInit {
     } else {
       objFilters.gender = this.gender
     }
-    debugger
+
     if (this.city === undefined || this.city == "") {
       delete objFilters.city;
       console.log("no ha selecionado el city")
