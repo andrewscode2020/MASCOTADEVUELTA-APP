@@ -1,106 +1,47 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-mdv1 py-4">
   <a class="navbar-brand text-mdv3" routerLink="/home">mascotadevuelta.com</a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div
-    class="collapse navbar-collapse d-flex justify-content-between"
-    id="navbarNav"
-  >
+  <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item" routerLinkActive="active">
-        <a
-          class="nav-link font-weight-bold text-mdv3"
-          routerLink="/buscaTuMascota"
-          >Busca Tu Mascota</a
-        >
+        <a class="nav-link font-weight-bold text-mdv3" routerLink="/buscaTuMascota">Busca Tu Mascota</a>
       </li>
       <li *ngIf="user" class="nav-item" routerLinkActive="active">
         <div>
-          <a
-            class="nav-link font-weight-bold text-mdv3"
-            routerLink="/reportaUnaMascota"
-            >Reporta Una Mascota</a
-          >
+          <a class="nav-link font-weight-bold text-mdv3" routerLink="/reportaUnaMascota">Reporta Una Mascota</a>
         </div>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a
-          class="nav-link font-weight-bold text-mdv3"
-          routerLink="/casosFelices"
-          >Casos Felices</a
-        >
+        <a class="nav-link font-weight-bold text-mdv3" routerLink="/casosFelices">Casos Felices</a>
       </li>
     </ul>
     <div class="row m-0">
       <!-- Columna Regístrate/Usuario -->
       <div class="col text-center">
-        <div
-          *ngIf="!user"
-          id="divRegistrate"
-          class="d-flex flex-column"
-          data-toggle="modal"
-          data-target="#modalRegistry"
-        >
-          <fa-icon
-            [icon]="faUserPlus"
-            class="px-3 text-mdv3 icono-social"
-          ></fa-icon>
-          <a
-            id="txtRegistrate"
-            class="texto-usuario text-decoration-none text-mdv3"
-            >Registrate</a
-          >
+        <div *ngIf="!user" id="divRegistrate" class="d-flex flex-column" data-toggle="modal"
+          data-target="#modalRegistry">
+          <fa-icon [icon]="faUserPlus" class="px-3 text-mdv3 icono-social"></fa-icon>
+          <a id="txtRegistrate" class="texto-usuario text-decoration-none text-mdv3">Registrate</a>
         </div>
         <div *ngIf="user" id="divUsuario" class="d-flex flex-column">
           <fa-icon [icon]="faUser" class="px-3 text-mdv3 icono-social">
           </fa-icon>
-          <a
-            id="txtUsuario"
-            class="texto-usuario text-decoration-none text-mdv3"
-            >{{ user.name }}</a
-          >
+          <a id="txtUsuario" class="texto-usuario text-decoration-none text-mdv3">{{ user.name }}</a>
         </div>
       </div>
       <!-- Columna Ingresa/Salir -->
       <div class="col text-center">
-        <div
-          *ngIf="!user"
-          id="divLogin"
-          class="d-flex flex-column"
-          data-toggle="modal"
-          data-target="#modalLogin"
-        >
-          <fa-icon
-            [icon]="faSignInAlt"
-            class="px-3 text-mdv3 icono-social"
-          ></fa-icon>
-          <a id="txtlogin" class="texto-usuario text-decoration-none text-mdv3"
-            >Ingresa</a
-          >
+        <div *ngIf="!user" id="divLogin" class="d-flex flex-column" data-toggle="modal" data-target="#modalLogin">
+          <fa-icon [icon]="faSignInAlt" class="px-3 text-mdv3 icono-social"></fa-icon>
+          <a id="txtlogin" class="texto-usuario text-decoration-none text-mdv3">Ingresa</a>
         </div>
-        <div
-          *ngIf="user"
-          id="divLogout"
-          class="d-flex flex-column"
-          (click)="signOut()"
-        >
-          <fa-icon
-            [icon]="faSignOutAlt"
-            class="px-3 text-mdv3 icono-social"
-          ></fa-icon>
-          <a id="txtlogin" class="texto-usuario text-decoration-none text-mdv3"
-            >Salir</a
-          >
+        <div *ngIf="user" id="divLogout" class="d-flex flex-column" (click)="signOut()">
+          <fa-icon [icon]="faSignOutAlt" class="px-3 text-mdv3 icono-social"></fa-icon>
+          <a id="txtlogin" class="texto-usuario text-decoration-none text-mdv3">Salir</a>
         </div>
       </div>
     </div>
@@ -108,24 +49,13 @@
 </nav>
 
 <!--Modal-->
-<div
-  class="modal fade"
-  id="modalLogin"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Usuario Registrado</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -137,24 +67,13 @@
 </div>
 <!--fin modal login-->
 <!--Modal registro-->
-<div
-  class="modal fade"
-  id="modalRegistry"
-  tabindex="-1"
-  role="dialog"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="modalRegistry" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Registrate</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -172,11 +91,18 @@
 <footer class="footer d-flex flex-column align-items-center bg-mdv1">
   <!-- Redes Sociales -->
   <div class="redes-sociales m-3 py-2">
-    <fa-icon [icon]="faFacebookF" class="px-3 text-mdv3 icono-social"></fa-icon>
-    <fa-icon [icon]="faTwitter" class="px-3 text-mdv3 icono-social"></fa-icon>
-    <fa-icon [icon]="faInstagram" class="px-3 text-mdv3 icono-social"></fa-icon>
-    <fa-icon [icon]="faYoutube" class="px-3 text-mdv3 icono-social"></fa-icon>
-    <fa-icon [icon]="share" class="px-3 text-mdv3 icono-social"></fa-icon>
+    <a target=”_blank” href="https://www.facebook.com/mascotadevuelta">
+      <fa-icon [icon]="faFacebookF" class="px-3 text-mdv3 icono-social"></fa-icon>
+    </a>
+    <a target=”_blank” href="https://www.twitter.com/mascotadevuelta">
+      <fa-icon [icon]="faTwitter" class="px-3 text-mdv3 icono-social"></fa-icon>
+    </a>
+    <a target=”_blank” href="https://www.instagram.com/mascotadevuelta">
+      <fa-icon [icon]="faInstagram" class="px-3 text-mdv3 icono-social"></fa-icon>
+    </a>
+    <a target=”_blank” href="https://www.youtube.com/channel/UCysvf9G_PdOR_DhrVbPifeA">
+      <fa-icon [icon]="faYoutube" class="px-3 text-mdv3 icono-social"></fa-icon>
+    </a>
   </div>
 
   <!-- Nombre de la página -->
