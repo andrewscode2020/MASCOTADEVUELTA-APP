@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { faCoffee, faShare, faSignInAlt, faSignOutAlt, faUserPlus, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faInstagram, faTwitter, faYoutube } from '@fortawesome/fontawesome-free-brands';
-// import jQuery as * from 'bootstrap';
-// const bootstrap = require('bootstrap');
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -22,12 +21,19 @@ export class AppComponent {
   faUserPlus = faUserPlus;
   faUser = faUser;
 
-  login = false;
-  newUser = true
+  // Inicialmente es null porque se asume que el cliente no ha iniciado sesión
+  user = null;
+
+  constructor(private authenticacionServicio: AuthenticationService) {
+    this.authenticacionServicio.user$.subscribe(
+      (userInfo) => {
+        console.log('usuario ', userInfo);
+        this.user = userInfo;
+      }
+    )
+  }
   
-  cerrarSesion() {
-    localStorage.removeItem('mdvToken');
-    this.login = !this.login; 
-    this.newUser = !this.newUser;
+  signOut() {
+    this.authenticacionServicio.signOut();
   }
 }
