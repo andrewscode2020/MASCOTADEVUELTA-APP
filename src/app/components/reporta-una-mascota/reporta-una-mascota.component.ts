@@ -11,6 +11,7 @@ import { Country } from 'src/app/interfaces/country';
 import { CountriesService } from "../../services/countries.service";
 import { State } from 'src/app/interfaces/state'
 import { StateService } from "src/app/services/state.service"
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-reporta-una-mascota',
@@ -26,9 +27,15 @@ export class ReportaUnaMascotaComponent {
   states: Array<State> = [];
   cities: Array<City> = [];
 
+  userInfo = {
+    name: '',
+    email: '',
+    phone: ''
+  };
+
   constructor(
     private formBuilder: FormBuilder,
-    private petReportService: PetReportService, private petTypeService: PetTypeService, private breedService: BreedService, private cityService: CityService, private countriesService: CountriesService, private stateService: StateService
+    private petReportService: PetReportService, private petTypeService: PetTypeService, private breedService: BreedService, private cityService: CityService, private countriesService: CountriesService, private stateService: StateService, private authenticationService: AuthenticationService
   ) {
     this.newPetReport = this.formBuilder.group({
       reportType: '',
@@ -59,6 +66,12 @@ export class ReportaUnaMascotaComponent {
       successful: true,
       endNote: ''
     })
+
+    this.authenticationService.user$.subscribe(
+      (userInfo) => {
+        this.userInfo = userInfo;
+      }
+    )
   }
 
   registerNewPet() {
@@ -80,15 +93,9 @@ export class ReportaUnaMascotaComponent {
         }
       }
 
-      // console.log('petData ', petData.get('reportType'));
-
-      // petData.append('reportType', formObj.reportType);
-      // petData.append('petType', formObj.petType);
-      // petData.append('gender', formObj.gender);
-      // petData.append('eventDate', formObj.eventDate);
-      // petData.append('city', formObj.city);
-      // const imageInput: HTMLElement = document.querySelector('input#customFile');
-      // petData.append('petPic', imageInput.files[0]);
+      petData.append('userName', this.userInfo.name);
+      petData.append('userEmail', this.userInfo.email);
+      petData.append('userPhone', this.userInfo.phone);
 
       this.petReportService.createNewReport(petData)
         .subscribe(

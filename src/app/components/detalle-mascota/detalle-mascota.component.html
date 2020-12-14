@@ -18,10 +18,18 @@
       class="col-4 bg-mdv3 p-5 rounded-lg border d-flex flex-column justify-content-center"
     >
       <div class="d-flex my-3">
+        <span class="card-icons text-mdv5 material-icons"> face </span>
+        <h6 class="d-inline ml-2">{{ petInfo.userName }}</h6>
+      </div>
+      <div class="d-flex my-3">
         <span class="card-icons text-mdv5 material-icons">
           alternate_email
         </span>
-        <h6 class="d-inline ml-2">Ejemplo2@gmail.com</h6>
+        <h6 class="d-inline ml-2">{{ petInfo.userEmail }}</h6>
+      </div>
+      <div *ngIf="petInfo.publicPhone === true" class="d-flex my-3">
+        <span class="card-icons text-mdv5 material-icons"> phone </span>
+        <h6 class="d-inline ml-2">{{ petInfo.userPhone }}</h6>
       </div>
       <div class="d-flex my-3">
         <span class="card-icons text-mdv5 material-icons">
