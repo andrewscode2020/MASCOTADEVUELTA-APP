@@ -9,7 +9,7 @@ export class AuthenticationService {
   BASE_URL = `${environment.API_URL}/users/authentication`
 
   constructor(private http: HttpClient) { }
-   
+
   autenticar(credenciales = {}) {
     return this.http.post(this.BASE_URL, credenciales)
   }

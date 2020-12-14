@@ -28,4 +28,8 @@ export class PetReportService {
   getAllReports() {
     return this.http.get(`${environment.API_URL}/petreports`);
   }
+
+  getReportsWithFilters(filters = {}) {    
+    return this.http.post(`${environment.API_URL}/petreports/searchReports`, filters);
+  }
 }

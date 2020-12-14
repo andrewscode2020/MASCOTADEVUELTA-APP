@@ -74,10 +74,49 @@ export class BuscaTuMascotaComponent implements OnInit {
   }
 
   searchReports() {
+    let objFilters = new Object();
+
     console.log("buscando....");
-    if (this.reportType === "") {
-      console.log("no ha selecionado el tipo de reporte")
+    if (this.reportType === undefined || this.reportType == "") {
+      console.log("no ha selecionado el reportType")
+    } else {
+      objFilters.reportType = this.reportType
     }
+
+    if (this.petType === undefined || this.petType == "") {
+      console.log("no ha selecionado el petType")
+    } else {
+      objFilters.petType = this.petType
+    }
+
+    if (this.breed === undefined || this.breed == "") {
+      console.log("no ha selecionado el breed")
+    } else {
+      objFilters.breed = this.breed
+    }
+
+    if (this.gender === undefined || this.gender == "") {
+      console.log("no ha selecionado el gender")
+    } else {
+      objFilters.gender = this.gender
+    }
+
+    if (this.city === undefined || this.city == "") {
+      console.log("no ha selecionado el city")
+    } else {
+      objFilters.city = this.city
+    }
+
+    this.petReportService.getReportsWithFilters(objFilters)
+      .subscribe(
+        (res: []) => {
+          console.log('Búsqueda realizada con éxito', res)
+          this.reports = res;
+        },
+        (err) => {
+          console.error('Error al realizar búsqueda: ', err)
+        }
+      )
   }
 
   getCities() {
