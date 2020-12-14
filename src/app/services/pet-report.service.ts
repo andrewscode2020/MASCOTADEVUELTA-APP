@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+// import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PetReportService {
+
+  // private petInfo = new BehaviorSubject({});
+  // petInfo$ = this.petInfo.asObservable();
 
   constructor(private http: HttpClient) { }
 

@@ -37,7 +37,7 @@ const routes: Routes = [
     component: CasosFelicesComponent
   },
   {
-    path: 'detalleMascota',  // http://localhost:4200/casosFelices
+    path: 'detalleMascota/:id',  // http://localhost:4200/casosFelices
     component: DetalleMascotaComponent
   },
   {

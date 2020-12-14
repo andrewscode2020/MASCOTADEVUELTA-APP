@@ -93,7 +93,7 @@
         <div class="row my-2 m-0">
           <div class="col-md-4 d-flex align-items-center">
             <img
-              src="{{ report.petPic }}"
+              src="../../../assets/images/1.jpg"
               class="card-img imagenesPerritos"
               alt="..."
             />
@@ -102,8 +102,10 @@
             <div class="card-body bg-mdv1 blueCard">
               <!-- blueCard -->
               <!-- Fila 1: Tipo de Reporte y Nombre -->
-              <div class="row d-flex justify-content-start text-light ml-3">
-                <h5>{{ report.reportType }}: {{ report.name }}</h5>
+              <div
+                class="row d-flex justify-content-center text-light ml-3 text-bold text-mdv2"
+              >
+                <h4>{{ report.reportType }}: {{ report.name }}</h4>
               </div>
               <!-- Fila 2: Datos Básicos de la mascota -->
               <div class="row d-flex align-items-center">
@@ -143,9 +145,8 @@
                 <div class="col-md-4 d-flex flex-column justify-content-center">
                   <button
                     id="verMas1"
-                    class="botonDetalles btn"
-                    routerLink="/detalleMascota"
-                    (click)="getOnePet(report._id)"
+                    class="botonDetalles btn btn-mdv2"
+                    [routerLink]="['/detalleMascota', report._id]"
                   >
                     Ver más
                   </button>

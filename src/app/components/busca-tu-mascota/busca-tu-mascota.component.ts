@@ -28,19 +28,6 @@ export class BuscaTuMascotaComponent implements OnInit {
 
   constructor(private petReportService: PetReportService, private petTypeService: PetTypeService, private breedService: BreedService, private cityService: CityService) { }
 
-  getOnePet(petId) {
-    debugger
-    this.petReportService.getReport(petId)
-      .subscribe(
-        (res) => {
-          console.log('Se encontró reporte con éxito', res)
-        },
-        (err) => {
-          console.error('Error al mostrar reporte: ', err)
-        }
-      )
-  }
-
   getAllPets() {
     this.petReportService.getAllReports()
       .subscribe(
