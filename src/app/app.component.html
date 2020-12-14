@@ -24,7 +24,7 @@
           >Busca Tu Mascota</a
         >
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li *ngIf="user" class="nav-item" routerLinkActive="active">
         <div>
           <a
             class="nav-link font-weight-bold text-mdv3"
